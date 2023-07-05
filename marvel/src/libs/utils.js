@@ -7,7 +7,7 @@ const getHash = (ts, privateKey, publicKey) => {
 
 let API_URL = process.env.REACT_APP_BASE_URL;
 
-const fetchHeros = async (name) => {
+const fetchHeroes = async (name) => {
   let heroUrl = `${API_URL}/v1/public/characters`;
 
   let ts = Date.now().toString();
@@ -19,8 +19,8 @@ const fetchHeros = async (name) => {
   try {
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data);
-    return data;
+    console.log(data.data.results);
+    return data.data.results;
   } catch (err) {
     console.error(err);
     return;
@@ -39,12 +39,12 @@ const fetchHero = async (id) => {
   try {
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data);
-    return data;
+    console.log(data.data.results);
+    return data.data.results;
   } catch (err) {
     console.error(err);
     return;
   }
 };
 
-export { fetchHeros, fetchHero };
+export { fetchHeroes, fetchHero };

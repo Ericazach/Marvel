@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
-function CharItem({name, img, description}) {
+function CharItem({ id, name, img }) {
   return (
-    <div>CharItem</div>
-  )
+    <Link to={`/${id}`}>
+      <div>
+        <img src={img} alt="heroe" />
+        <p>{name}</p>
+      </div>
+    </Link>
+  );
 }
 
-export default CharItem
+export default CharItem;
