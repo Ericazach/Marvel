@@ -27,14 +27,14 @@ const fetchHeroes = async (name) => {
   }
 };
 
-const fetchHero = async (id) => {
-  let heroUrl = `${API_URL}/v1/public/characters/${id}`;
+const fetchHeroesTotal = async () => {
+  let heroUrl = `${API_URL}/v1/public/characters`;
 
   let ts = Date.now().toString();
   let apiKey = process.env.REACT_APP_API_KEY;
   let privateKey = process.env.REACT_APP_PRIVATE_KEY;
   let hash = getHash(ts, privateKey, apiKey);
-  let url = `${heroUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}`;
+  let url = `${heroUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}&orderBy=name`;
 
   try {
     let response = await fetch(url);
@@ -47,4 +47,24 @@ const fetchHero = async (id) => {
   }
 };
 
-export { fetchHeroes, fetchHero };
+const fetchHero = async (id) => {
+  let heroUrl = `${API_URL}/v1/public/characters/${id}`;
+
+  let ts = Date.now().toString();
+  let apiKey = process.env.REACT_APP_API_KEY;
+  let privateKey = process.env.REACT_APP_PRIVATE_KEY;
+  let hash = getHash(ts, privateKey, apiKey);
+  let url = `${heroUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}`;
+
+  try {
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log(data);
+    return data;
+  } catch (err) {
+    console.error(err);
+    return;
+  }
+};
+
+export { fetchHeroes, fetchHero, fetchHeroesTotal };

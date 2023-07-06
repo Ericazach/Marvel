@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 function CharItem({ id, name, img }) {
   return (
-    <Link to={`/${id}`}>
+    <Link className="enlace" to={`/${id}`}>
       <div>
         <img src={img} alt="heroe" />
-        <p>{name}</p>
+        <p className="title text-uppercase fs-2 text-danger">{name}</p>
       </div>
     </Link>
   );

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { fetchHeroes } from "../../libs/utils";
+import { fetchHeroes, fetchHeroesTotal } from "../../libs/utils";
 
 function SearchBar({ setter }) {
   let input = useRef("");

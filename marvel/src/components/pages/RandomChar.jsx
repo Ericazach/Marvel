@@ -1,9 +1,5 @@
-import React from 'react'
-
 function RandomChar() {
-  return (
-    <div>RandomChar</div>
-  )
+  return <div></div>;
 }
 
-export default RandomChar
+export default RandomChar;
