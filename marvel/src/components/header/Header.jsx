@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
 import { fetchHeroes } from "../../libs/utils";
-import CharItem from "../charItem/CharItem";
 import CharItemRandom from "../charItem/CharItemRandom";
 
 function Header() {
   const [heroes, setHeroes] = useState([]);
-  const IMG_FANTASTIC = "portrait_uncanny";
+  const IMG_FANTASTIC = "portrait_small";
 
   const handleClick = async () => {
     try {
@@ -40,7 +39,7 @@ function Header() {
           id={hero.id}
           name={hero.name}
           description={hero.description}
-          img={`${hero.thumbnail.path}/${IMG_FANTASTIC}.${hero.thumbnail.extension}`}
+          img={`${hero.thumbnail.path}/portrait_uncanny.${hero.thumbnail.extension}`}
           series={hero.series.items}
           key={hero.id}
         />
@@ -68,8 +67,8 @@ function Header() {
                   to="/random-character"
                   onClick={handleClick}
                 >
-                  <h4 className="text-light me-2 fs-1 text-uppercase title">
-                    Generate Character
+                  <h4 className="text-light me-2 text-uppercase title">
+                    Generate Hero
                   </h4>
                 </Link>
               </li>

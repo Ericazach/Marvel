@@ -4,9 +4,9 @@ function CharItemRandom({ name, img, description, series }) {
   return (
     <div className="container ">
       <div className="d-flex flex-column justify-content-center text-center">
-        <img className="w-50 align-self-center" src={img} alt="hero" />
+        <img className="size align-self-center" src={img} alt="hero" />
         <div className="">
-          <p className="text-uppercase title fs-1">{name}</p>
+          <p className="text-uppercase title ">{name}</p>
           {description ? (
             <>
               <h4>Description</h4>

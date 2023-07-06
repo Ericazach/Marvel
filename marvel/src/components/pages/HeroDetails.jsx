@@ -26,7 +26,7 @@ export default function HeroDetails() {
     description = hero.data.results[0].description;
     thumbnailPath = hero.data.results[0].thumbnail.path;
     thumbnailExtension = hero.data.results[0].thumbnail.extension;
-    thumbnailUrl = `${thumbnailPath}.${thumbnailExtension}`;
+    thumbnailUrl = `${thumbnailPath}/portrait_uncanny.${thumbnailExtension}`;
     series = hero.data.results[0].series.items;
   }
 
@@ -35,9 +35,9 @@ export default function HeroDetails() {
   return (
     <div className="container ">
       <div className="d-flex flex-column justify-content-center text-center">
-        <img className="w-50 align-self-center" src={thumbnailUrl} alt="hero" />
+        <img className="align-self-center size" src={thumbnailUrl} alt="hero" />
         <div className="">
-          <p className="text-uppercase title fs-1">{name}</p>
+          <p className="text-uppercase title">{name}</p>
           {description ? (
             <>
               <h4>Description</h4>
