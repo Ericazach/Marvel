@@ -6,7 +6,7 @@ import CharItemRandom from "../charItem/CharItemRandom";
 
 function Header() {
   const [heroes, setHeroes] = useState([]);
-  const IMG_FANTASTIC = "portrait_small";
+  // const IMG_FANTASTIC = "portrait_small";
 
   const handleClick = async () => {
     try {
@@ -31,6 +31,7 @@ function Header() {
 
   let charItems;
   let nameHero;
+
 
   if (heroes) {
     charItems = heroes.map((hero) => {
